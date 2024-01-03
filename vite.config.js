@@ -4,5 +4,5 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
-	base: "/react-gh-pages-template/", //Replace with repo name
+	base: "/weather-app/", //Replace with repo name
 });

@@ -1,68 +1,154 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/****** CSS RESET ******/
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
 }
-a:hover {
-  color: #535bf2;
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
 }
+
+#root {
+	width: 100%;
+}
+
+/****** GLOBAL STYLES ******/
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Montserrat", sans-serif;
+	color: #e4faff;
+	background-image: linear-gradient(
+			0deg,
+			rgba(0, 55, 68, 0.5) 0%,
+			rgba(0, 55, 68, 0.5) 100%
+		),
+		url("/images/background.jpg");
+	background-position: 20% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+	font-size: 1.25rem;
+	font-weight: 500;
+	line-height: 3.5rem;
+	letter-spacing: 0.5rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h2 {
+	font-size: 3rem;
+	font-weight: 500;
+	line-height: 4rem; /* 133.947% */
+	letter-spacing: 0.6rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+h3 {
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 0.175rem;
+}
+
+.app {
+	padding: 5vh 6vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.data-panel {
+	display: flex;
+	align-items: center;
+	margin-bottom: 3rem;
+}
+
+.temp {
+	font-size: 8rem;
+	font-weight: 400;
+	line-height: 6rem; /* 75% */
+}
+
+.text {
+	margin-left: 2em;
+	margin-bottom: -1em;
+}
+
+.date {
+	font-size: 1.2rem;
+	font-weight: 400;
+	letter-spacing: 0.3rem;
+}
+
+.icon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-left: 5em;
+	margin-bottom: -1em;
+}
+
+.icon-text {
+	font-size: 0.75rem;
+	font-weight: 500;
+	line-height: 2rem; /* 350% */
+	letter-spacing: 0.2rem;
+}
+
+.searchbar {
+	border-radius: 2.5rem;
+	border: 1px solid rgba(204, 245, 255, 0.13);
+	background: rgba(204, 245, 255, 0.16);
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.16);
+	backdrop-filter: blur(4.8px);
+
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 1rem;
+}
+
+.searchbar img {
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-right: 1rem;
+}
+
+.searchbar input {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	background: none;
+	border: none;
+	border-radius: 100px;
+	color: #e4faff;
+	font-size: 1.2rem;
+	margin-bottom: -1px;
+}
+
+.searchbar input:focus {
+	outline: none;
+}
+
+.searchbar input::-webkit-search-cancel-button {
+	-webkit-appearance: none;
 }

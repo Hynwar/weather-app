@@ -1,34 +1,27 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<>
-			<div>
-				<a href='https://vitejs.dev' target='_blank'>
-					<img src={viteLogo} className='logo' alt='Vite logo' />
-				</a>
-				<a href='https://react.dev' target='_blank'>
-					<img src={reactLogo} className='logo react' alt='React logo' />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className='card'>
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className='read-the-docs'>
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
+		<div className='app'>
+			<header>
+				<h1>Atmos Weather</h1>
+			</header>
+			<main>
+				<div className='data-panel'>
+					<span className='temp'>27°</span>
+					<div className='text'>
+						<h2 className='location'>London</h2>
+						<p className='date'>06:09 - Sun 6 Oct, 2024</p>
+					</div>
+					<div className='icon'>
+						<img src='images\weather.png' alt='weather' />
+						<div className='icon-text'>Partly Cloudy</div>
+					</div>
+				</div>
+				<div className='searchbar'>
+					<img src='images\Search.png' alt='search icon' />
+					<input type='search' />
+				</div>
+			</main>
+		</div>
 	);
 }
 
