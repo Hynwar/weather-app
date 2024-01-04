@@ -1,0 +1,38 @@
+.dataPanel {
+	display: flex;
+	align-items: center;
+	margin-bottom: 3rem;
+}
+
+.dataPanel span {
+	font-size: 8rem;
+	font-weight: 400;
+	line-height: 6rem; /* 75% */
+}
+
+.text {
+	margin-left: 2em;
+	margin-bottom: -1em;
+}
+
+.text p {
+	font-size: 1.2rem;
+	font-weight: 400;
+	letter-spacing: 0.3rem;
+}
+
+.icon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-left: 5em;
+	margin-bottom: -1em;
+}
+
+.icon p {
+	font-size: 0.75rem;
+	font-weight: 500;
+	line-height: 2rem; /* 350% */
+	letter-spacing: 0.2rem;
+}
