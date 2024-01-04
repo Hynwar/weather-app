@@ -16,9 +16,37 @@ function App() {
 						<div className='icon-text'>Partly Cloudy</div>
 					</div>
 				</div>
-				<div className='searchbar'>
-					<img src='images\Search.png' alt='search icon' />
-					<input type='search' />
+				<div className='search'>
+					<div className='searchbar'>
+						<img src='images\Search.png' alt='search icon' />
+						<input type='search' />
+					</div>
+					<div className='search-results'>
+						<ul>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+							<li>Query 1</li>
+						</ul>
+					</div>
 				</div>
 			</main>
 		</div>
