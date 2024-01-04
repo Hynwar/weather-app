@@ -1,16 +1,25 @@
+import { useState } from "react";
 import styles from "./SearchPanel.module.css";
 
 function SearchPanel() {
+	const [searchQuery, setSearchQuery] = useState("");
+
 	return (
 		<div>
-			<div className={styles.searchBar}>
+			<div
+				className={`${styles.searchBar} ${searchQuery ? styles.active : ""}`}>
 				<img src='images\Search.png' alt='search icon' />
-				<input type='search' />
+				<input
+					type='search'
+					value={searchQuery}
+					onChange={(e) => setSearchQuery(e.target.value)}
+				/>
 			</div>
-			<div className={styles.searchResults}>
-				<ul>
-					<li>Query 1</li>
-				</ul>
+			<div
+				className={`${styles.searchResults} ${
+					searchQuery ? styles.active : ""
+				}`}>
+				<ul></ul>
 			</div>
 		</div>
 	);
