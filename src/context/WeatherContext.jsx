@@ -10,6 +10,7 @@ function WeatherProvider({ children }) {
 	const [isLoading, setIsLoading] = useState(false);
 
 	async function getWeatherData(lat, lon) {
+		setIsLoading(true);
 		try {
 			const res = await fetch(
 				`${URL}?units=metric&lat=${lat}&lon=${lon}&appid=${API_KEY}`
@@ -19,6 +20,7 @@ function WeatherProvider({ children }) {
 		} catch (error) {
 			throw new Error(error);
 		}
+		setIsLoading(false);
 	}
 
 	return (

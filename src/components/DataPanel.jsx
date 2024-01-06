@@ -1,9 +1,17 @@
 import { useWeather } from "../context/WeatherContext";
 import styles from "./DataPanel.module.css";
+import Loader from "./Loader";
 
 function DataPanel() {
-	const { weatherData } = useWeather();
+	const { weatherData, isLoading } = useWeather();
 	console.log(weatherData);
+
+	if (isLoading)
+		return (
+			<div className={styles.loader}>
+				<Loader />
+			</div>
+		);
 
 	if (weatherData.length === 0)
 		return (

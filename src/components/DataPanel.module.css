@@ -2,6 +2,7 @@
 	display: flex;
 	align-items: center;
 	margin-bottom: 3rem;
+	transition: all 0.5s ease-in-out;
 }
 
 .dataPanel span {
@@ -35,4 +36,9 @@
 	font-weight: 500;
 	line-height: 2rem; /* 350% */
 	letter-spacing: 0.2rem;
+}
+
+.loader {
+	text-align: center;
+	margin-bottom: 2rem;
 }
