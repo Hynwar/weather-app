@@ -9,14 +9,14 @@ function WeatherProvider({ children }) {
 	const [weatherData, setWeatherData] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
-	async function getWeatherData(lat, lon) {
+	async function getWeatherData(lat, lon, city) {
 		setIsLoading(true);
 		try {
 			const res = await fetch(
 				`${URL}?units=metric&lat=${lat}&lon=${lon}&appid=${API_KEY}`
 			);
 			const result = await res.json();
-			setWeatherData(result);
+			setWeatherData({ ...result, name: city });
 		} catch (error) {
 			throw new Error(error);
 		}

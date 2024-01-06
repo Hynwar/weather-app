@@ -39,7 +39,11 @@ function SearchPanel() {
 			(result) => result.wikiDataId === id
 		);
 		setSearchQuery("");
-		getWeatherData(selectedCity.latitude, selectedCity.longitude);
+		getWeatherData(
+			selectedCity.latitude,
+			selectedCity.longitude,
+			selectedCity.city
+		);
 	}
 
 	return (
