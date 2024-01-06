@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./SearchPanel.module.css";
+import { useWeather } from "../context/WeatherContext";
 
 const url = "https://wft-geo-db.p.rapidapi.com/v1/geo";
 const options = {
@@ -13,6 +14,7 @@ const options = {
 function SearchPanel() {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [searchResults, setSearchResults] = useState([]);
+	const { getWeatherData } = useWeather();
 
 	useEffect(() => {
 		if (!searchQuery) return;
@@ -32,6 +34,14 @@ function SearchPanel() {
 		fetchSearchResults();
 	}, [searchQuery]);
 
+	function handleSelect(id) {
+		const selectedCity = searchResults.find(
+			(result) => result.wikiDataId === id
+		);
+		setSearchQuery("");
+		getWeatherData(selectedCity.latitude, selectedCity.longitude);
+	}
+
 	return (
 		<div>
 			<div
@@ -50,7 +60,9 @@ function SearchPanel() {
 				{searchResults && (
 					<ul>
 						{searchResults.map((results) => (
-							<li key={results.wikiDataId}>
+							<li
+								key={results.wikiDataId}
+								onClick={() => handleSelect(results.wikiDataId)}>
 								{results.city}, {results.countryCode}
 							</li>
 						))}
